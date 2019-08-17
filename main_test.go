@@ -21,3 +21,14 @@ func TestFruits(t *testing.T) {
 		Status(http.StatusOK).JSON().Object()
 	fmt.Println(obj)
 }
+
+func TestExampleSuccess(t *testing.T) {
+	err := true
+	result := 2
+    if err != false {
+        t.Fatalf("failed test %#v", err)
+    }
+    if result != 1 {
+        t.Fatal("failed test")
+    }
+}
