@@ -62,9 +62,9 @@ workflows:
   build:
     jobs:
       - build:
-          # filters:
-          #   branches:
-          #     only: /.*/
+          filters:
+            branches:
+              only: /.*/
   # deploy:
   #   jobs:
   #     - deploy:
