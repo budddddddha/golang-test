@@ -30,7 +30,7 @@ jobs:
       # - setup_remote_docker
       - run: docker-compose build
       - run: docker-compose up -d
-      - run: docker-compose exec app go test .
+      - run: docker-compose exec app go test ./...
       # - run: go get github.com/julienschmidt/httprouter
       # - run: go get gopkg.in/gavv/httpexpect.v2
       # - run: go run . &
