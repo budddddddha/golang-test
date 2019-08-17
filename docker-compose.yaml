@@ -1,0 +1,18 @@
+# docker-composeのバージョン
+version: '3'
+# services配下に各コンテナの情報を記載する
+services:
+  # ここからはGolangのアプリケーションに対する情報
+  app:
+    # build: .
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    container_name: app
+    ports:
+      - "8080:8080"
+    volumes:
+      - .:/go/src
+    working_dir: /go/src
+    # docker-compose run実行時に実行される
+    command: make test

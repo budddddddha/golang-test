@@ -1,16 +1,21 @@
 package main
 
 import (
-    "testing" // テストで使える関数・構造体が用意されているパッケージをimport
+	"net/http"
+	"fmt"
+	// "net/http/httptest"
+	"testing"
+
+	"gopkg.in/gavv/httpexpect.v2"
 )
 
-func TestExampleSuccess(t *testing.T) {
-	err := true
-	result := "moge"
-    if err != false {
-        t.Fatalf("failed test %#v", err)
-    }
-    if result != "hige" {
-        t.Fatal("failed test")
-    }
+func TestFruits(t *testing.T) {
+	// create httpexpect instance
+	e := httpexpect.New(t, "http://localhost:8080")
+
+	// is it working?
+	obj := e.GET("/hoge").
+		Expect().
+		Status(http.StatusOK).JSON().Object()
+	fmt.Println(obj)
 }
