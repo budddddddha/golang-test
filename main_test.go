@@ -13,6 +13,8 @@ func TestFruits(t *testing.T) {
 	// create httpexpect instance
 	e := httpexpect.New(t, "http://localhost:8080")
 
+	fmt.Println("test")
+
 	// is it working?
 	obj := e.GET("/hoge").
 		Expect().
